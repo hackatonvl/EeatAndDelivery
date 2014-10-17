@@ -1,17 +1,16 @@
-<h1>Store#index</h1>
-<p>Find me in app/views/store/index.html.erb</p>
-
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <% end %>
 <h1>Каталог товаров для главной страницы</h1>
 <% @products.each do |product| %>
-<div class="entry">
-<%= image_tag(product.image_url) %>
-<h3><%= product.title %></h3>
-<%= sanitize(product.description) %>
-<div class="price_line">
-<span class="price"><%= product.price %></span>
-</div>
-</div>
+
+	<div class="box">
+		<h3><%= product.title %></h3>
+		<div class="img"><%= image_tag(product.image_url) %></div>
+		<div class="info"><%= sanitize(product.description) %>
+			<div class="price_line">
+				<span class="price"><%= number_with_precision(product.price, precision: 0) %>руб</span>
+			</div>
+		</div>
+	</div>
 <% end %>

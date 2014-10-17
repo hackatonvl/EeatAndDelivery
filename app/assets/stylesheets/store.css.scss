@@ -1,3 +1,12 @@
 // Place all the styles related to the Store controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box {
+	margin-bottom: 14px;
+	background-color: #fff;
+	border: 1px dashed #b1b1b1;
+	position: relative;
+	border-radius: 6px;
+	box-shadow: 0 1px 0 0 rgba(255,255,255,.85);
+}
