@@ -1,0 +1,22 @@
+<br>
+<%= link_to 'New Order', new_order_path %>
+<br>
+
+<h1>Заказы</h1>
+
+    <% @orders.each do |order| %>
+  <div class="box">
+        <%= order.name %>,
+        <%= order.address %> <br>
+        <%= order.email %> <br>
+        <%= order.delivery_time %> <br>
+        <%= order.comment %> <br>
+        <%= order.pay_type %> <br>
+        <%= link_to 'Show', order %>
+        <%= link_to 'Edit', edit_order_path(order) %>
+        <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+<% end %>
+<br>
+
+
