@@ -3,15 +3,20 @@
 <br>
 
 <h1>Заказы</h1>
+<%= Time.now.to_formatted_s(:short) %>
 
     <% @orders.each do |order| %>
   <div class="box">
+        <h1><%= order.created_at.to_s(:time) %></h1>
         <%= order.name %>,
         <%= order.address %> <br>
         <%= order.email %> <br>
         <%= order.delivery_time %> <br>
         <%= order.comment %> <br>
         <%= order.pay_type %> <br>
+
+
+
         <%= link_to 'Show', order %>
         <%= link_to 'Edit', edit_order_path(order) %>
         <%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %>

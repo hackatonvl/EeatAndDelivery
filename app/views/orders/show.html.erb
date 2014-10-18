@@ -30,5 +30,15 @@
   <%= @order.pay_type %>
 </p>
 
+<p>
+  <strong>Заказ создан:</strong>
+  <%= @order.created_at %>
+</p>
+
+<p>
+  <strong>Pay type:</strong>
+  <%= @order.pay_type %>
+</p>
+
 <%= link_to 'Edit', edit_order_path(@order) %> |
 <%= link_to 'Back', orders_path %>
