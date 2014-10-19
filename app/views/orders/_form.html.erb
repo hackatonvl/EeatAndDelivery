@@ -12,30 +12,33 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    Ваше имя:<br>
+    <%= f.text_field :name, size: 20 %>
   </div>
   <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_area :address %>
+    Адрес:<br>
+    <%= f.text_area :address, rows: 3, cols: 40 %>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %>
+    <%= f.email_field :email, size: 40 %>
   </div>
   <div class="field">
     <%= f.label :delivery_time %><br>
+    <%= f.select :delivery_time, [ 
+     ["6am", 6], ["7am", 7], ["8am", 8], ["9am", 9], ["10am", 10], ["11am", 11], ["12pm", 12], ["1pm", 13], ["2pm", 14], ["3pm", 15], ["4pm", 16], ["5pm", 17], ["6pm", 18], ["7pm", 19], ["8pm", 20], ["9pm", 21], ["10pm", 22], ["11pm", 23], ["12am", 24], ["1am", 1], ["2am", 2], ["3am", 3], ["4am",4 ], ["5am", 5]
+], class:''%>
     <%= f.text_field :delivery_time %>
   </div>
   <div class="field">
-    <%= f.label :comment %><br>
+    Комментарии:<br>
     <%= f.text_area :comment %>
   </div>
   <div class="field">
-    <%= f.label :pay_type %><br>
-    <%= f.text_field :pay_type %>
+    Способ оплаты:<br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Наличными курьеру' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Сделать заказ' %>
   </div>
 <% end %>
